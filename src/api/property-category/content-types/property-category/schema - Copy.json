@@ -19,7 +19,7 @@
       "type": "uid",
       "pluginOptions": {
         "i18n": {
-          "localized": false
+          "localized": true
         }
       }
     },
@@ -56,14 +56,6 @@
         }
       },
       "targetField": "Name_Plural"
-    },
-    "Title": {
-      "type": "integer",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
     }
   }
 }
