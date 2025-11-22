@@ -484,7 +484,7 @@ export interface ApiMunicipalityMunicipality
     };
   };
   attributes: {
-    Code: Schema.Attribute.Integer &
+    code: Schema.Attribute.BigInteger &
       Schema.Attribute.Unique &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -494,7 +494,7 @@ export interface ApiMunicipalityMunicipality
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Description: Schema.Attribute.Text &
+    description: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -505,18 +505,18 @@ export interface ApiMunicipalityMunicipality
       'oneToMany',
       'api::municipality.municipality'
     >;
-    Name: Schema.Attribute.String &
+    name: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    Regional_unit: Schema.Attribute.Relation<
+    regional_unit: Schema.Attribute.Relation<
       'manyToOne',
       'api::regional-unit.regional-unit'
     >;
-    Slug: Schema.Attribute.UID &
+    slug: Schema.Attribute.UID &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -545,7 +545,7 @@ export interface ApiPropertyCategoryPropertyCategory
     };
   };
   attributes: {
-    Code: Schema.Attribute.Integer &
+    code: Schema.Attribute.Integer &
       Schema.Attribute.Unique &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -560,26 +560,26 @@ export interface ApiPropertyCategoryPropertyCategory
       'oneToMany',
       'api::property-category.property-category'
     >;
-    Name: Schema.Attribute.String &
+    name: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    Name_Plural: Schema.Attribute.String &
+    name_plural: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'Name'> &
+    slug: Schema.Attribute.UID &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    slug_plural: Schema.Attribute.UID<'Name_Plural'> &
+    slug_plural: Schema.Attribute.UID &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -615,7 +615,11 @@ export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::property.property'
     >;
-    Name: Schema.Attribute.String &
+    municipality: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::municipality.municipality'
+    >;
+    name: Schema.Attribute.String &
       Schema.Attribute.Unique &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -627,6 +631,11 @@ export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
       'api::property-category.property-category'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    regional_unit: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::regional-unit.regional-unit'
+    >;
+    sectors: Schema.Attribute.Relation<'oneToMany', 'api::sector.sector'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -649,7 +658,7 @@ export interface ApiRegionRegion extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
-    Code: Schema.Attribute.Integer &
+    code: Schema.Attribute.Integer &
       Schema.Attribute.Unique &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -659,7 +668,7 @@ export interface ApiRegionRegion extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Description: Schema.Attribute.Text &
+    description: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -667,18 +676,18 @@ export interface ApiRegionRegion extends Struct.CollectionTypeSchema {
       }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::region.region'>;
-    Name: Schema.Attribute.String &
+    name: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    Regional_units: Schema.Attribute.Relation<
+    regional_units: Schema.Attribute.Relation<
       'oneToMany',
       'api::regional-unit.regional-unit'
     >;
-    Slug: Schema.Attribute.UID &
+    slug: Schema.Attribute.UID &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -707,7 +716,7 @@ export interface ApiRegionalUnitRegionalUnit
     };
   };
   attributes: {
-    Code: Schema.Attribute.Integer &
+    code: Schema.Attribute.Integer &
       Schema.Attribute.Unique &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -717,7 +726,7 @@ export interface ApiRegionalUnitRegionalUnit
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Description: Schema.Attribute.Text &
+    description: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -728,19 +737,79 @@ export interface ApiRegionalUnitRegionalUnit
       'oneToMany',
       'api::regional-unit.regional-unit'
     >;
-    Municipalities: Schema.Attribute.Relation<
+    municipalities: Schema.Attribute.Relation<
       'oneToMany',
       'api::municipality.municipality'
     >;
-    Name: Schema.Attribute.String &
+    name: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    Region: Schema.Attribute.Relation<'manyToOne', 'api::region.region'>;
-    Slug: Schema.Attribute.UID &
+    region: Schema.Attribute.Relation<'manyToOne', 'api::region.region'>;
+    slug: Schema.Attribute.UID &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSectorSector extends Struct.CollectionTypeSchema {
+  collectionName: 'sectors';
+  info: {
+    displayName: 'Sector';
+    pluralName: 'sectors';
+    singularName: 'sector';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    code: Schema.Attribute.Integer &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::sector.sector'>;
+    name: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    name_plural: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    property: Schema.Attribute.Relation<'manyToOne', 'api::property.property'>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug_plural: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1268,6 +1337,7 @@ declare module '@strapi/strapi' {
       'api::property.property': ApiPropertyProperty;
       'api::region.region': ApiRegionRegion;
       'api::regional-unit.regional-unit': ApiRegionalUnitRegionalUnit;
+      'api::sector.sector': ApiSectorSector;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

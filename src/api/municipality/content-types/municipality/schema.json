@@ -15,8 +15,8 @@
     }
   },
   "attributes": {
-    "Code": {
-      "type": "integer",
+    "code": {
+      "type": "biginteger",
       "pluginOptions": {
         "i18n": {
           "localized": false
@@ -24,7 +24,7 @@
       },
       "unique": true
     },
-    "Name": {
+    "name": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -32,7 +32,7 @@
         }
       }
     },
-    "Slug": {
+    "slug": {
       "type": "uid",
       "pluginOptions": {
         "i18n": {
@@ -40,7 +40,7 @@
         }
       }
     },
-    "Description": {
+    "description": {
       "type": "text",
       "pluginOptions": {
         "i18n": {
@@ -48,11 +48,11 @@
         }
       }
     },
-    "Regional_unit": {
+    "regional_unit": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::regional-unit.regional-unit",
-      "inversedBy": "Municipalities"
+      "inversedBy": "municipalities"
     }
   }
 }

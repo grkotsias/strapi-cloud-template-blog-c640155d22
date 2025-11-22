@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "property_categories",
+  "collectionName": "sectors",
   "info": {
-    "singularName": "property-category",
-    "pluralName": "property-categories",
-    "displayName": "Property Category"
+    "singularName": "sector",
+    "pluralName": "sectors",
+    "displayName": "Sector"
   },
   "options": {
     "draftAndPublish": true
@@ -32,14 +32,6 @@
         }
       }
     },
-    "name_plural": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "slug": {
       "type": "uid",
       "pluginOptions": {
@@ -48,13 +40,27 @@
         }
       }
     },
-    "slug_plural": {
-      "type": "uid",
+    "name_plural": {
+      "type": "string",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       }
+    },
+    "slug_plural": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "property": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::property.property",
+      "inversedBy": "sectors"
     }
   }
 }

@@ -15,7 +15,7 @@
     }
   },
   "attributes": {
-    "Code": {
+    "code": {
       "type": "integer",
       "pluginOptions": {
         "i18n": {
@@ -24,7 +24,7 @@
       },
       "unique": true
     },
-    "Name": {
+    "name": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -32,7 +32,7 @@
         }
       }
     },
-    "Slug": {
+    "slug": {
       "type": "uid",
       "pluginOptions": {
         "i18n": {
@@ -40,7 +40,7 @@
         }
       }
     },
-    "Description": {
+    "description": {
       "type": "text",
       "pluginOptions": {
         "i18n": {
@@ -48,11 +48,11 @@
         }
       }
     },
-    "Regional_units": {
+    "regional_units": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::regional-unit.regional-unit",
-      "mappedBy": "Region"
+      "mappedBy": "region"
     }
   }
 }

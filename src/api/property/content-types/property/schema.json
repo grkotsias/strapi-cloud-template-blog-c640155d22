@@ -15,7 +15,7 @@
     }
   },
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -28,6 +28,22 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::property-category.property-category"
+    },
+    "municipality": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::municipality.municipality"
+    },
+    "sectors": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sector.sector",
+      "mappedBy": "property"
+    },
+    "regional_unit": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::regional-unit.regional-unit"
     }
   }
 }
