@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "property_categories",
+  "collectionName": "regional_units",
   "info": {
-    "singularName": "property-category",
-    "pluralName": "property-categories",
-    "displayName": "Property Category"
+    "singularName": "regional-unit",
+    "pluralName": "regional-units",
+    "displayName": "Regional_Unit"
   },
   "options": {
     "draftAndPublish": true
@@ -32,31 +32,33 @@
         }
       }
     },
-    "Name_Plural": {
-      "type": "string",
+    "Slug": {
+      "type": "uid",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       }
     },
-    "slug": {
-      "type": "uid",
+    "Description": {
+      "type": "text",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      },
-      "targetField": "Name"
+      }
     },
-    "slug_plural": {
-      "type": "uid",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "targetField": "Name_Plural"
+    "Region": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::region.region",
+      "inversedBy": "Regional_units"
+    },
+    "Municipalities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::municipality.municipality",
+      "mappedBy": "Regional_unit"
     }
   }
 }

@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "property_categories",
+  "collectionName": "regions",
   "info": {
-    "singularName": "property-category",
-    "pluralName": "property-categories",
-    "displayName": "Property Category"
+    "singularName": "region",
+    "pluralName": "regions",
+    "displayName": "Region"
   },
   "options": {
     "draftAndPublish": true
@@ -32,31 +32,27 @@
         }
       }
     },
-    "Name_Plural": {
-      "type": "string",
+    "Slug": {
+      "type": "uid",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       }
     },
-    "slug": {
-      "type": "uid",
+    "Description": {
+      "type": "text",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      },
-      "targetField": "Name"
+      }
     },
-    "slug_plural": {
-      "type": "uid",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "targetField": "Name_Plural"
+    "Regional_units": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::regional-unit.regional-unit",
+      "mappedBy": "Region"
     }
   }
 }
