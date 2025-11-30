@@ -471,7 +471,7 @@ export interface ApiMunicipalityMunicipality
   extends Struct.CollectionTypeSchema {
   collectionName: 'municipalities';
   info: {
-    displayName: 'Municipality';
+    displayName: 'Municipalities';
     pluralName: 'municipalities';
     singularName: 'municipality';
   };
@@ -657,7 +657,7 @@ export interface ApiPropertyTypePropertyType
 export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
   collectionName: 'properties';
   info: {
-    displayName: 'Property';
+    displayName: 'Properties';
     pluralName: 'properties';
     singularName: 'property';
   };
@@ -785,7 +785,7 @@ export interface ApiPurposePurpose extends Struct.CollectionTypeSchema {
 export interface ApiRegionRegion extends Struct.CollectionTypeSchema {
   collectionName: 'regions';
   info: {
-    displayName: 'Region';
+    displayName: 'Regions';
     pluralName: 'regions';
     singularName: 'region';
   };
@@ -843,7 +843,7 @@ export interface ApiRegionalUnitRegionalUnit
   extends Struct.CollectionTypeSchema {
   collectionName: 'regional_units';
   info: {
-    displayName: 'Regional_Unit';
+    displayName: 'Regional Units';
     pluralName: 'regional-units';
     singularName: 'regional-unit';
   };
@@ -904,7 +904,7 @@ export interface ApiRegionalUnitRegionalUnit
 export interface ApiSectorSector extends Struct.CollectionTypeSchema {
   collectionName: 'sectors';
   info: {
-    displayName: 'Sector';
+    displayName: 'Sectors';
     pluralName: 'sectors';
     singularName: 'sector';
   };
@@ -965,7 +965,7 @@ export interface ApiSecurityFeatureSecurityFeature
   extends Struct.CollectionTypeSchema {
   collectionName: 'security_features';
   info: {
-    displayName: 'security_feature';
+    displayName: 'Security features';
     pluralName: 'security-features';
     singularName: 'security-feature';
   };
@@ -982,7 +982,7 @@ export interface ApiSecurityFeatureSecurityFeature
       Schema.Attribute.Unique &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     createdAt: Schema.Attribute.DateTime;

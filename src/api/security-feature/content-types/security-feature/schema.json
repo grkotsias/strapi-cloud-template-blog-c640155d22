@@ -4,7 +4,7 @@
   "info": {
     "singularName": "security-feature",
     "pluralName": "security-features",
-    "displayName": "security_feature"
+    "displayName": "Security features"
   },
   "options": {
     "draftAndPublish": true
@@ -35,7 +35,7 @@
       "type": "integer",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
       "unique": true
