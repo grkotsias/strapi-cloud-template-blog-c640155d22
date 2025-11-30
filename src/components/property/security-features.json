@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_security_feature_security_features",
+  "collectionName": "components_property_security_features",
   "info": {
-    "displayName": "security_feature"
+    "displayName": "Security features"
   },
   "options": {},
   "attributes": {

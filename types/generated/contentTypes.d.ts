@@ -705,9 +705,9 @@ export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
       'api::regional-unit.regional-unit'
     >;
     sectors: Schema.Attribute.Relation<'oneToMany', 'api::sector.sector'>;
-    security_feature: Schema.Attribute.Component<
-      'security-feature.security-feature',
-      true
+    security_features: Schema.Attribute.Component<
+      'property.security-features',
+      false
     > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {

@@ -55,15 +55,15 @@
       "component": "meta.meta",
       "repeatable": false
     },
-    "security_feature": {
+    "security_features": {
       "type": "component",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "component": "security-feature.security-feature",
-      "repeatable": true
+      "component": "property.security-features",
+      "repeatable": false
     }
   }
 }
