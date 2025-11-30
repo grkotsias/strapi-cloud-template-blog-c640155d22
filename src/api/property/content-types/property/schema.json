@@ -29,6 +29,11 @@
       "relation": "oneToOne",
       "target": "api::property-category.property-category"
     },
+    "regional_unit": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::regional-unit.regional-unit"
+    },
     "municipality": {
       "type": "relation",
       "relation": "oneToOne",
@@ -40,10 +45,25 @@
       "target": "api::sector.sector",
       "mappedBy": "property"
     },
-    "regional_unit": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::regional-unit.regional-unit"
+    "meta_details": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "meta.meta",
+      "repeatable": false
+    },
+    "security_feature": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "security-feature.security-feature",
+      "repeatable": true
     }
   }
 }
