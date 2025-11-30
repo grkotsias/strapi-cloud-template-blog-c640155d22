@@ -16,7 +16,7 @@ export interface PropertySecurityFeatures extends Struct.ComponentSchema {
     displayName: 'Security features';
   };
   attributes: {
-    security_features: Schema.Attribute.Relation<
+    items: Schema.Attribute.Relation<
       'oneToMany',
       'api::security-feature.security-feature'
     >;

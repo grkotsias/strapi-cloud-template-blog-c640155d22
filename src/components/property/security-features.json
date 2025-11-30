@@ -5,7 +5,7 @@
   },
   "options": {},
   "attributes": {
-    "security_features": {
+    "items": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::security-feature.security-feature"
