@@ -4,7 +4,7 @@
   "info": {
     "singularName": "municipality",
     "pluralName": "municipalities",
-    "displayName": "Municipalities"
+    "displayName": "@ Municipalities"
   },
   "options": {
     "draftAndPublish": true

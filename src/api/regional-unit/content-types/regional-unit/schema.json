@@ -4,7 +4,7 @@
   "info": {
     "singularName": "regional-unit",
     "pluralName": "regional-units",
-    "displayName": "Regional Units"
+    "displayName": "@ Regional Units"
   },
   "options": {
     "draftAndPublish": true

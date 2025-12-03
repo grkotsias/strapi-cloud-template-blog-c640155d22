@@ -720,7 +720,7 @@ export interface ApiMunicipalityMunicipality
   extends Struct.CollectionTypeSchema {
   collectionName: 'municipalities';
   info: {
-    displayName: 'Municipalities';
+    displayName: '@ Municipalities';
     pluralName: 'municipalities';
     singularName: 'municipality';
   };
@@ -781,7 +781,7 @@ export interface ApiPropertyCategoryPropertyCategory
   extends Struct.CollectionTypeSchema {
   collectionName: 'property_categories';
   info: {
-    displayName: 'Property Category';
+    displayName: '# Property Category';
     pluralName: 'property-categories';
     singularName: 'property-category';
   };
@@ -844,7 +844,7 @@ export interface ApiPropertyTypePropertyType
   extends Struct.CollectionTypeSchema {
   collectionName: 'property_types';
   info: {
-    displayName: 'Property Type';
+    displayName: '# Property Type';
     pluralName: 'property-types';
     singularName: 'property-type';
   };
@@ -906,7 +906,7 @@ export interface ApiPropertyTypePropertyType
 export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
   collectionName: 'properties';
   info: {
-    displayName: '# Properties';
+    displayName: '00 Properties';
     pluralName: 'properties';
     singularName: 'property';
   };
@@ -972,7 +972,7 @@ export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
 export interface ApiPurposePurpose extends Struct.CollectionTypeSchema {
   collectionName: 'purposes';
   info: {
-    displayName: 'Purpose';
+    displayName: '# Purpose';
     pluralName: 'purposes';
     singularName: 'purpose';
   };
@@ -1034,7 +1034,7 @@ export interface ApiPurposePurpose extends Struct.CollectionTypeSchema {
 export interface ApiRegionRegion extends Struct.CollectionTypeSchema {
   collectionName: 'regions';
   info: {
-    displayName: 'Regions';
+    displayName: '@ Regions';
     pluralName: 'regions';
     singularName: 'region';
   };
@@ -1092,7 +1092,7 @@ export interface ApiRegionalUnitRegionalUnit
   extends Struct.CollectionTypeSchema {
   collectionName: 'regional_units';
   info: {
-    displayName: 'Regional Units';
+    displayName: '@ Regional Units';
     pluralName: 'regional-units';
     singularName: 'regional-unit';
   };
@@ -1153,7 +1153,7 @@ export interface ApiRegionalUnitRegionalUnit
 export interface ApiSectorSector extends Struct.CollectionTypeSchema {
   collectionName: 'sectors';
   info: {
-    displayName: 'Sectors';
+    displayName: '# Sectors';
     pluralName: 'sectors';
     singularName: 'sector';
   };

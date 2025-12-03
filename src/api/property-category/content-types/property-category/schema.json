@@ -4,7 +4,7 @@
   "info": {
     "singularName": "property-category",
     "pluralName": "property-categories",
-    "displayName": "Property Category"
+    "displayName": "# Property Category"
   },
   "options": {
     "draftAndPublish": true

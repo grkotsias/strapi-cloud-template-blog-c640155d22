@@ -4,7 +4,7 @@
   "info": {
     "singularName": "purpose",
     "pluralName": "purposes",
-    "displayName": "Purpose"
+    "displayName": "# Purpose"
   },
   "options": {
     "draftAndPublish": true

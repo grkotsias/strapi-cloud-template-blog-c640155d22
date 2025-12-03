@@ -4,7 +4,7 @@
   "info": {
     "singularName": "sector",
     "pluralName": "sectors",
-    "displayName": "Sectors"
+    "displayName": "# Sectors"
   },
   "options": {
     "draftAndPublish": true
