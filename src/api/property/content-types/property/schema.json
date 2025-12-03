@@ -39,6 +39,20 @@
       "relation": "oneToOne",
       "target": "api::municipality.municipality"
     },
+    "location_level_view": {
+      "type": "enumeration",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "default": "show municipality",
+      "enum": [
+        "show region",
+        "show regional unit",
+        "show municipality"
+      ]
+    },
     "sectors": {
       "type": "relation",
       "relation": "oneToMany",

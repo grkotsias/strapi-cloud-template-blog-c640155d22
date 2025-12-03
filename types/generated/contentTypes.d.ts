@@ -927,6 +927,15 @@ export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::property.property'
     >;
+    location_level_view: Schema.Attribute.Enumeration<
+      ['show region', 'show regional unit', 'show municipality']
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<'show municipality'>;
     meta_details: Schema.Attribute.Component<'meta.meta', false> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
