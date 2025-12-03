@@ -467,6 +467,255 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiEnergyClassEnergyClass extends Struct.CollectionTypeSchema {
+  collectionName: 'energy_classes';
+  info: {
+    displayName: 'Energy Class';
+    pluralName: 'energy-classes';
+    singularName: 'energy-class';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    code: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::energy-class.energy-class'
+    >;
+    name: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiEnergyDetailEnergyDetail
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'energy_details';
+  info: {
+    displayName: 'Energy Details';
+    pluralName: 'energy-details';
+    singularName: 'energy-detail';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    code: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::energy-detail.energy-detail'
+    >;
+    name: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFireProtectionFireProtection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'fire_protections';
+  info: {
+    displayName: 'Fire Protection';
+    pluralName: 'fire-protections';
+    singularName: 'fire-protection';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    code: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::fire-protection.fire-protection'
+    >;
+    name: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFloorCeilingFloorCeiling
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'floor_ceilings';
+  info: {
+    displayName: 'Floor Ceiling';
+    pluralName: 'floor-ceilings';
+    singularName: 'floor-ceiling';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    code: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::floor-ceiling.floor-ceiling'
+    >;
+    name: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHeatingCoolingHeatingCooling
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'heating_coolings';
+  info: {
+    displayName: 'Heating Cooling';
+    pluralName: 'heating-coolings';
+    singularName: 'heating-cooling';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    code: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::heating-cooling.heating-cooling'
+    >;
+    name: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiMunicipalityMunicipality
   extends Struct.CollectionTypeSchema {
   collectionName: 'municipalities';
@@ -657,7 +906,7 @@ export interface ApiPropertyTypePropertyType
 export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
   collectionName: 'properties';
   info: {
-    displayName: 'Properties';
+    displayName: '# Properties';
     pluralName: 'properties';
     singularName: 'property';
   };
@@ -965,7 +1214,7 @@ export interface ApiSecurityFeatureSecurityFeature
   extends Struct.CollectionTypeSchema {
   collectionName: 'security_features';
   info: {
-    displayName: 'Security features';
+    displayName: 'Security Features';
     pluralName: 'security-features';
     singularName: 'security-feature';
   };
@@ -992,6 +1241,50 @@ export interface ApiSecurityFeatureSecurityFeature
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::security-feature.security-feature'
+    >;
+    name: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiUrbanZoningUrbanZoning extends Struct.CollectionTypeSchema {
+  collectionName: 'urban_zonings';
+  info: {
+    displayName: 'Urban Zoning';
+    pluralName: 'urban-zonings';
+    singularName: 'urban-zoning';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    code: Schema.Attribute.Integer;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::urban-zoning.urban-zoning'
     >;
     name: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
@@ -1523,6 +1816,11 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::energy-class.energy-class': ApiEnergyClassEnergyClass;
+      'api::energy-detail.energy-detail': ApiEnergyDetailEnergyDetail;
+      'api::fire-protection.fire-protection': ApiFireProtectionFireProtection;
+      'api::floor-ceiling.floor-ceiling': ApiFloorCeilingFloorCeiling;
+      'api::heating-cooling.heating-cooling': ApiHeatingCoolingHeatingCooling;
       'api::municipality.municipality': ApiMunicipalityMunicipality;
       'api::property-category.property-category': ApiPropertyCategoryPropertyCategory;
       'api::property-type.property-type': ApiPropertyTypePropertyType;
@@ -1532,6 +1830,7 @@ declare module '@strapi/strapi' {
       'api::regional-unit.regional-unit': ApiRegionalUnitRegionalUnit;
       'api::sector.sector': ApiSectorSector;
       'api::security-feature.security-feature': ApiSecurityFeatureSecurityFeature;
+      'api::urban-zoning.urban-zoning': ApiUrbanZoningUrbanZoning;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

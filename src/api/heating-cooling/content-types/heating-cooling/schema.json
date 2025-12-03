@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "security_features",
+  "collectionName": "heating_coolings",
   "info": {
-    "singularName": "security-feature",
-    "pluralName": "security-features",
-    "displayName": "Security Features"
+    "singularName": "heating-cooling",
+    "pluralName": "heating-coolings",
+    "displayName": "Heating Cooling"
   },
   "options": {
     "draftAndPublish": true
@@ -15,6 +15,14 @@
     }
   },
   "attributes": {
+    "code": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
     "name": {
       "type": "string",
       "pluginOptions": {
@@ -30,15 +38,6 @@
           "localized": true
         }
       }
-    },
-    "code": {
-      "type": "integer",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "unique": true
     }
   }
 }
