@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_sections_properties_listings",
+  "info": {
+    "displayName": "Properties Listing",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "properties": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::page.page"
+    },
+    "cta": {
+      "type": "component",
+      "component": "components.call-to-action",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

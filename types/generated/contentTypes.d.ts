@@ -467,10 +467,225 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiArticlesTagArticlesTag extends Struct.CollectionTypeSchema {
+  collectionName: 'articles_tags';
+  info: {
+    displayName: 'Articles Tags';
+    pluralName: 'articles-tags';
+    singularName: 'articles-tag';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    insights: Schema.Attribute.Relation<'manyToMany', 'api::insight.insight'>;
+    key: Schema.Attribute.UID<'name'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::articles-tag.articles-tag'
+    >;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    successStories: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::success-story.success-story'
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCertificationTypeCertificationType
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'certification_types';
+  info: {
+    displayName: 'P | Certification Type';
+    pluralName: 'certification-types';
+    singularName: 'certification-type';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    code: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::certification-type.certification-type'
+    >;
+    name: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiContactContact extends Struct.SingleTypeSchema {
+  collectionName: 'contacts';
+  info: {
+    displayName: 'Contact';
+    pluralName: 'contacts';
+    singularName: 'contact';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    aside: Schema.Attribute.DynamicZone<
+      ['components.simple-link', 'widgets.links-widget']
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    header: Schema.Attribute.Component<'headers.header-contact', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact.contact'
+    >;
+    privacyNote: Schema.Attribute.Blocks &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'components.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiElectricalInstallationElectricalInstallation
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'electrical_installations';
+  info: {
+    displayName: 'P | Electrical Installation';
+    pluralName: 'electrical-installations';
+    singularName: 'electrical-installation';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    code: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::electrical-installation.electrical-installation'
+    >;
+    name: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiEnergyClassEnergyClass extends Struct.CollectionTypeSchema {
   collectionName: 'energy_classes';
   info: {
-    displayName: 'Energy Class';
+    displayName: 'P | Energy Class';
     pluralName: 'energy-classes';
     singularName: 'energy-class';
   };
@@ -520,7 +735,7 @@ export interface ApiEnergyDetailEnergyDetail
   extends Struct.CollectionTypeSchema {
   collectionName: 'energy_details';
   info: {
-    displayName: 'Energy Details';
+    displayName: 'P | Energy Details';
     pluralName: 'energy-details';
     singularName: 'energy-detail';
   };
@@ -570,7 +785,7 @@ export interface ApiFireProtectionFireProtection
   extends Struct.CollectionTypeSchema {
   collectionName: 'fire_protections';
   info: {
-    displayName: 'Fire Protection';
+    displayName: 'P | Fire Protection';
     pluralName: 'fire-protections';
     singularName: 'fire-protection';
   };
@@ -620,7 +835,7 @@ export interface ApiFloorCeilingFloorCeiling
   extends Struct.CollectionTypeSchema {
   collectionName: 'floor_ceilings';
   info: {
-    displayName: 'Floor Ceiling';
+    displayName: 'P | Floor Ceiling';
     pluralName: 'floor-ceilings';
     singularName: 'floor-ceiling';
   };
@@ -666,11 +881,116 @@ export interface ApiFloorCeilingFloorCeiling
   };
 }
 
+export interface ApiFooterFooter extends Struct.SingleTypeSchema {
+  collectionName: 'footers';
+  info: {
+    displayName: 'Footer';
+    pluralName: 'footers';
+    singularName: 'footer';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    copyrightsLinks: Schema.Attribute.Component<
+      'components.simple-link',
+      true
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    footerMenu: Schema.Attribute.Component<'nav.menu-columns', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::footer.footer'>;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiGeneralSettingGeneralSetting
+  extends Struct.SingleTypeSchema {
+  collectionName: 'general_settings';
+  info: {
+    displayName: 'General Settings';
+    pluralName: 'general-settings';
+    singularName: 'general-setting';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    facebookUrl: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    instagramUrl: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    linkedinUrl: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::general-setting.general-setting'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHeatingCoolingHeatingCooling
   extends Struct.CollectionTypeSchema {
   collectionName: 'heating_coolings';
   info: {
-    displayName: 'Heating Cooling';
+    displayName: 'P | Heating Cooling';
     pluralName: 'heating-coolings';
     singularName: 'heating-cooling';
   };
@@ -716,11 +1036,443 @@ export interface ApiHeatingCoolingHeatingCooling
   };
 }
 
+export interface ApiHomeHome extends Struct.SingleTypeSchema {
+  collectionName: 'homes';
+  info: {
+    displayName: 'Home';
+    pluralName: 'homes';
+    singularName: 'home';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    blocks: Schema.Attribute.DynamicZone<
+      [
+        'sections.text-columns-with-stats',
+        'sections.properties-listing',
+        'sections.values-columns',
+        'sections.faq',
+        'sections.newsletter',
+        'sections.wysiwyg',
+        'sections.text-with-variants',
+        'sections.text-centered',
+        'sections.services-tiles',
+        'sections.cta-tiles',
+        'sections.statistics',
+        'sections.insights-listing',
+        'sections.success-stories-listing',
+      ]
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    header: Schema.Attribute.Component<'headers.home-header', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::home.home'>;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'components.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiInsightInsight extends Struct.CollectionTypeSchema {
+  collectionName: 'insights';
+  info: {
+    displayName: 'Insights';
+    pluralName: 'insights';
+    singularName: 'insight';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    articlesTags: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::articles-tag.articles-tag'
+    >;
+    aside: Schema.Attribute.DynamicZone<
+      ['components.simple-link', 'widgets.links-widget']
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    content: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    insightsCategory: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::insights-category.insights-category'
+    >;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::insight.insight'
+    >;
+    publicationDate: Schema.Attribute.Date &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'components.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    thumbnail: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    url: Schema.Attribute.UID<'title'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+  };
+}
+
+export interface ApiInsightsCategoryInsightsCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'insights_categories';
+  info: {
+    displayName: 'Insights Categories';
+    pluralName: 'insights-categories';
+    singularName: 'insights-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    insights: Schema.Attribute.Relation<'oneToMany', 'api::insight.insight'>;
+    key: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::insights-category.insights-category'
+    >;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'components.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiInsightsListingInsightsListing
+  extends Struct.SingleTypeSchema {
+  collectionName: 'insights_listings';
+  info: {
+    displayName: 'Insights Listing';
+    pluralName: 'insights-listings';
+    singularName: 'insights-listing';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    blocks: Schema.Attribute.DynamicZone<
+      [
+        'sections.wysiwyg',
+        'sections.values-columns',
+        'sections.text-with-variants',
+        'sections.text-columns-with-stats',
+        'sections.text-centered',
+        'sections.services-tiles',
+        'sections.properties-listing',
+        'sections.newsletter',
+        'sections.faq',
+        'sections.cta-tiles',
+        'sections.statistics',
+        'sections.insights-listing',
+        'sections.success-stories-listing',
+      ]
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::insights-listing.insights-listing'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'components.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiInvestmentHighlightInvestmentHighlight
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'investment_highlights';
+  info: {
+    displayName: 'P | Investment Highlight';
+    pluralName: 'investment-highlights';
+    singularName: 'investment-highlight';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    code: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::investment-highlight.investment-highlight'
+    >;
+    name: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiLayoutOrientationLayoutOrientation
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'layout_orientations';
+  info: {
+    displayName: 'P | Layout Orientation';
+    pluralName: 'layout-orientations';
+    singularName: 'layout-orientation';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    code: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::layout-orientation.layout-orientation'
+    >;
+    name: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiLocationHighlightLocationHighlight
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'location_highlights';
+  info: {
+    displayName: 'P | Location Highlight';
+    pluralName: 'location-highlights';
+    singularName: 'location-highlight';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    code: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::location-highlight.location-highlight'
+    >;
+    name: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiMunicipalityMunicipality
   extends Struct.CollectionTypeSchema {
   collectionName: 'municipalities';
   info: {
-    displayName: '@ Municipalities';
+    displayName: 'S | Municipalities';
     pluralName: 'municipalities';
     singularName: 'municipality';
   };
@@ -761,7 +1513,7 @@ export interface ApiMunicipalityMunicipality
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    regional_unit: Schema.Attribute.Relation<
+    regionalUnit: Schema.Attribute.Relation<
       'manyToOne',
       'api::regional-unit.regional-unit'
     >;
@@ -777,11 +1529,266 @@ export interface ApiMunicipalityMunicipality
   };
 }
 
+export interface ApiNavigationNavigation extends Struct.SingleTypeSchema {
+  collectionName: 'navigations';
+  info: {
+    displayName: 'Navigation';
+    pluralName: 'navigations';
+    singularName: 'navigation';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::navigation.navigation'
+    >;
+    menuItems: Schema.Attribute.Component<'nav.dropdowns', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiOutdoorAreaOutdoorArea extends Struct.CollectionTypeSchema {
+  collectionName: 'outdoor_areas';
+  info: {
+    displayName: 'P | Outdoor Area';
+    pluralName: 'outdoor-areas';
+    singularName: 'outdoor-area';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    code: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::outdoor-area.outdoor-area'
+    >;
+    name: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPAmenityPAmenity extends Struct.CollectionTypeSchema {
+  collectionName: 'p_amenities';
+  info: {
+    displayName: 'P | Amenity';
+    pluralName: 'p-amenities';
+    singularName: 'p-amenity';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    code: Schema.Attribute.Integer &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::p-amenity.p-amenity'
+    >;
+    name: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    namePlural: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slugPlural: Schema.Attribute.UID &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPagePage extends Struct.CollectionTypeSchema {
+  collectionName: 'pages';
+  info: {
+    displayName: 'Pages';
+    pluralName: 'pages';
+    singularName: 'page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    aside: Schema.Attribute.DynamicZone<
+      ['components.simple-link', 'widgets.links-widget']
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    blocks: Schema.Attribute.DynamicZone<
+      [
+        'sections.values-columns',
+        'sections.text-columns-with-stats',
+        'sections.properties-listing',
+        'sections.newsletter',
+        'sections.faq',
+        'sections.text-with-variants',
+        'sections.text-centered',
+        'sections.cta-tiles',
+        'sections.services-tiles',
+        'sections.wysiwyg',
+        'sections.statistics',
+        'sections.insights-listing',
+        'sections.success-stories-listing',
+      ]
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    content: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    header: Schema.Attribute.Component<'headers.header-page', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::page.page'>;
+    pageTemplate: Schema.Attribute.Enumeration<
+      ['dynamic-page', 'normal-page']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<'dynamic-page'>;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'components.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    url: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+  };
+}
+
 export interface ApiPropertyCategoryPropertyCategory
   extends Struct.CollectionTypeSchema {
   collectionName: 'property_categories';
   info: {
-    displayName: '# Property Category';
+    displayName: 'S | Property Category';
     pluralName: 'property-categories';
     singularName: 'property-category';
   };
@@ -815,7 +1822,7 @@ export interface ApiPropertyCategoryPropertyCategory
           localized: true;
         };
       }>;
-    name_plural: Schema.Attribute.String &
+    namePlural: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -828,7 +1835,7 @@ export interface ApiPropertyCategoryPropertyCategory
           localized: true;
         };
       }>;
-    slug_plural: Schema.Attribute.UID &
+    slugPlural: Schema.Attribute.UID &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -844,7 +1851,7 @@ export interface ApiPropertyTypePropertyType
   extends Struct.CollectionTypeSchema {
   collectionName: 'property_types';
   info: {
-    displayName: '# Property Type';
+    displayName: 'P | Property Type';
     pluralName: 'property-types';
     singularName: 'property-type';
   };
@@ -878,7 +1885,7 @@ export interface ApiPropertyTypePropertyType
           localized: true;
         };
       }>;
-    name_plural: Schema.Attribute.String &
+    namePlural: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -891,7 +1898,7 @@ export interface ApiPropertyTypePropertyType
           localized: true;
         };
       }>;
-    slug_plural: Schema.Attribute.UID &
+    slugPlural: Schema.Attribute.UID &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -906,7 +1913,7 @@ export interface ApiPropertyTypePropertyType
 export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
   collectionName: 'properties';
   info: {
-    displayName: '00 Properties';
+    displayName: 'Properties';
     pluralName: 'properties';
     singularName: 'property';
   };
@@ -919,15 +1926,138 @@ export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
+    amenities: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::p-amenity.p-amenity'
+    >;
+    bathroomsCount: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    bedroomsCount: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    buildingHeight: Schema.Attribute.Decimal &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    buildingLevels: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    certificationTypes: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::certification-type.certification-type'
+    >;
+    code: Schema.Attribute.Integer &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    depth: Schema.Attribute.Decimal &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    descriptionDetails: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    electricalInstallations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::electrical-installation.electrical-installation'
+    >;
+    energyClass: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::energy-class.energy-class'
+    >;
+    energyDetails: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::energy-detail.energy-detail'
+    >;
+    facade: Schema.Attribute.Decimal &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    fireProtections: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::fire-protection.fire-protection'
+    >;
+    fit: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    floorAreaRatio: Schema.Attribute.Decimal &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    floorCeiling: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::floor-ceiling.floor-ceiling'
+    >;
+    heatingCoolingDetails: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::heating-cooling.heating-cooling'
+    >;
+    investmentHighlights: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::investment-highlight.investment-highlight'
+    >;
+    landCoverage: Schema.Attribute.Decimal &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    layoutOrientations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::layout-orientation.layout-orientation'
+    >;
+    loadingDocks: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::property.property'
     >;
-    location_level_view: Schema.Attribute.Enumeration<
+    locationHighlights: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::location-highlight.location-highlight'
+    >;
+    locationLevelView: Schema.Attribute.Enumeration<
       ['show region', 'show regional unit', 'show municipality']
     > &
       Schema.Attribute.SetPluginOptions<{
@@ -936,10 +2066,16 @@ export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
         };
       }> &
       Schema.Attribute.DefaultTo<'show municipality'>;
-    meta_details: Schema.Attribute.Component<'meta.meta', false> &
+    mapLat: Schema.Attribute.Float &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
+        };
+      }>;
+    mapLong: Schema.Attribute.Float &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
         };
       }>;
     municipality: Schema.Attribute.Relation<
@@ -947,41 +2083,131 @@ export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
       'api::municipality.municipality'
     >;
     name: Schema.Attribute.String &
-      Schema.Attribute.Unique &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    property_category: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::property-category.property-category'
-    >;
-    publishedAt: Schema.Attribute.DateTime;
-    regional_unit: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::regional-unit.regional-unit'
-    >;
-    sectors: Schema.Attribute.Relation<'oneToMany', 'api::sector.sector'>;
-    security_features: Schema.Attribute.Component<
-      'property.security-features',
-      false
-    > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
+    offerStatus: Schema.Attribute.Enumeration<['booked', 'sold']> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    outdoorAreas: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::outdoor-area.outdoor-area'
+    >;
+    parkingSpaces: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    photos: Schema.Attribute.Media<'images', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    plotSquareMeters: Schema.Attribute.Float &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    power: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    price: Schema.Attribute.Decimal &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    propertyCategory: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::property-category.property-category'
+    >;
+    propertyType: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::property-type.property-type'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    purpose: Schema.Attribute.Relation<'oneToOne', 'api::purpose.purpose'>;
+    region: Schema.Attribute.Relation<'oneToOne', 'api::region.region'>;
+    regionalUnit: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::regional-unit.regional-unit'
+    >;
+    sectors: Schema.Attribute.Relation<'oneToMany', 'api::sector.sector'>;
+    securityFeatures: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::security-feature.security-feature'
+    >;
+    seo: Schema.Attribute.Component<'components.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    slug: Schema.Attribute.UID &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    squareMeters: Schema.Attribute.Decimal &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    suites: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    urbanZoningDetails: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::urban-zoning.urban-zoning'
+    >;
+    windowFramesAndGlazings: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::window-frames-and-glazing.window-frames-and-glazing'
+    >;
+    withBuildingPermit: Schema.Attribute.Boolean &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    yearBuilt: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    yearRenovated: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
   };
 }
 
 export interface ApiPurposePurpose extends Struct.CollectionTypeSchema {
   collectionName: 'purposes';
   info: {
-    displayName: '# Purpose';
+    displayName: 'S | Purpose';
     pluralName: 'purposes';
     singularName: 'purpose';
   };
@@ -1015,7 +2241,7 @@ export interface ApiPurposePurpose extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    name_plural: Schema.Attribute.String &
+    namePlural: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1028,7 +2254,7 @@ export interface ApiPurposePurpose extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    slug_plural: Schema.Attribute.UID &
+    slugPlural: Schema.Attribute.UID &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1043,7 +2269,7 @@ export interface ApiPurposePurpose extends Struct.CollectionTypeSchema {
 export interface ApiRegionRegion extends Struct.CollectionTypeSchema {
   collectionName: 'regions';
   info: {
-    displayName: '@ Regions';
+    displayName: 'S | Regions';
     pluralName: 'regions';
     singularName: 'region';
   };
@@ -1081,7 +2307,7 @@ export interface ApiRegionRegion extends Struct.CollectionTypeSchema {
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    regional_units: Schema.Attribute.Relation<
+    regionalUnits: Schema.Attribute.Relation<
       'oneToMany',
       'api::regional-unit.regional-unit'
     >;
@@ -1101,7 +2327,7 @@ export interface ApiRegionalUnitRegionalUnit
   extends Struct.CollectionTypeSchema {
   collectionName: 'regional_units';
   info: {
-    displayName: '@ Regional Units';
+    displayName: 'S | Regional Units';
     pluralName: 'regional-units';
     singularName: 'regional-unit';
   };
@@ -1162,7 +2388,7 @@ export interface ApiRegionalUnitRegionalUnit
 export interface ApiSectorSector extends Struct.CollectionTypeSchema {
   collectionName: 'sectors';
   info: {
-    displayName: '# Sectors';
+    displayName: 'S | Sectors';
     pluralName: 'sectors';
     singularName: 'sector';
   };
@@ -1193,7 +2419,7 @@ export interface ApiSectorSector extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    name_plural: Schema.Attribute.String &
+    namePlural: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1207,7 +2433,7 @@ export interface ApiSectorSector extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    slug_plural: Schema.Attribute.String &
+    slugPlural: Schema.Attribute.UID &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1223,7 +2449,7 @@ export interface ApiSecurityFeatureSecurityFeature
   extends Struct.CollectionTypeSchema {
   collectionName: 'security_features';
   info: {
-    displayName: 'Security Features';
+    displayName: 'P | Security Features';
     pluralName: 'security-features';
     singularName: 'security-feature';
   };
@@ -1270,10 +2496,226 @@ export interface ApiSecurityFeatureSecurityFeature
   };
 }
 
+export interface ApiSuccessStoriesCategorySuccessStoriesCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'success_stories_categories';
+  info: {
+    displayName: 'Success Stories Categories';
+    pluralName: 'success-stories-categories';
+    singularName: 'success-stories-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    key: Schema.Attribute.UID<'name'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::success-stories-category.success-stories-category'
+    >;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<'name'>;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'components.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    successStories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::success-story.success-story'
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSuccessStoriesListingSuccessStoriesListing
+  extends Struct.SingleTypeSchema {
+  collectionName: 'success_stories_listings';
+  info: {
+    displayName: 'Success Stories Listing';
+    pluralName: 'success-stories-listings';
+    singularName: 'success-stories-listing';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    blocks: Schema.Attribute.DynamicZone<
+      [
+        'sections.wysiwyg',
+        'sections.values-columns',
+        'sections.text-with-variants',
+        'sections.text-columns-with-stats',
+        'sections.text-centered',
+        'sections.services-tiles',
+        'sections.properties-listing',
+        'sections.newsletter',
+        'sections.faq',
+        'sections.cta-tiles',
+        'sections.statistics',
+        'sections.insights-listing',
+        'sections.success-stories-listing',
+      ]
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::success-stories-listing.success-stories-listing'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'components.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSuccessStorySuccessStory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'success_stories';
+  info: {
+    displayName: 'Success Stories';
+    pluralName: 'success-stories';
+    singularName: 'success-story';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    articlesTags: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::articles-tag.articles-tag'
+    >;
+    aside: Schema.Attribute.DynamicZone<
+      ['components.simple-link', 'widgets.links-widget']
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    content: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::success-story.success-story'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'components.seo', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    successStoriesCategory: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::success-stories-category.success-stories-category'
+    >;
+    thumbnail: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    url: Schema.Attribute.UID<'title'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+  };
+}
+
 export interface ApiUrbanZoningUrbanZoning extends Struct.CollectionTypeSchema {
   collectionName: 'urban_zonings';
   info: {
-    displayName: 'Urban Zoning';
+    displayName: 'P | Urban Zoning';
     pluralName: 'urban-zonings';
     singularName: 'urban-zoning';
   };
@@ -1294,6 +2736,56 @@ export interface ApiUrbanZoningUrbanZoning extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::urban-zoning.urban-zoning'
+    >;
+    name: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiWindowFramesAndGlazingWindowFramesAndGlazing
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'window_frames_and_glazings';
+  info: {
+    displayName: 'P | Window Frames & Glazing';
+    pluralName: 'window-frames-and-glazings';
+    singularName: 'window-frames-and-glazing';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    code: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::window-frames-and-glazing.window-frames-and-glazing'
     >;
     name: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
@@ -1825,12 +3317,29 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::articles-tag.articles-tag': ApiArticlesTagArticlesTag;
+      'api::certification-type.certification-type': ApiCertificationTypeCertificationType;
+      'api::contact.contact': ApiContactContact;
+      'api::electrical-installation.electrical-installation': ApiElectricalInstallationElectricalInstallation;
       'api::energy-class.energy-class': ApiEnergyClassEnergyClass;
       'api::energy-detail.energy-detail': ApiEnergyDetailEnergyDetail;
       'api::fire-protection.fire-protection': ApiFireProtectionFireProtection;
       'api::floor-ceiling.floor-ceiling': ApiFloorCeilingFloorCeiling;
+      'api::footer.footer': ApiFooterFooter;
+      'api::general-setting.general-setting': ApiGeneralSettingGeneralSetting;
       'api::heating-cooling.heating-cooling': ApiHeatingCoolingHeatingCooling;
+      'api::home.home': ApiHomeHome;
+      'api::insight.insight': ApiInsightInsight;
+      'api::insights-category.insights-category': ApiInsightsCategoryInsightsCategory;
+      'api::insights-listing.insights-listing': ApiInsightsListingInsightsListing;
+      'api::investment-highlight.investment-highlight': ApiInvestmentHighlightInvestmentHighlight;
+      'api::layout-orientation.layout-orientation': ApiLayoutOrientationLayoutOrientation;
+      'api::location-highlight.location-highlight': ApiLocationHighlightLocationHighlight;
       'api::municipality.municipality': ApiMunicipalityMunicipality;
+      'api::navigation.navigation': ApiNavigationNavigation;
+      'api::outdoor-area.outdoor-area': ApiOutdoorAreaOutdoorArea;
+      'api::p-amenity.p-amenity': ApiPAmenityPAmenity;
+      'api::page.page': ApiPagePage;
       'api::property-category.property-category': ApiPropertyCategoryPropertyCategory;
       'api::property-type.property-type': ApiPropertyTypePropertyType;
       'api::property.property': ApiPropertyProperty;
@@ -1839,7 +3348,11 @@ declare module '@strapi/strapi' {
       'api::regional-unit.regional-unit': ApiRegionalUnitRegionalUnit;
       'api::sector.sector': ApiSectorSector;
       'api::security-feature.security-feature': ApiSecurityFeatureSecurityFeature;
+      'api::success-stories-category.success-stories-category': ApiSuccessStoriesCategorySuccessStoriesCategory;
+      'api::success-stories-listing.success-stories-listing': ApiSuccessStoriesListingSuccessStoriesListing;
+      'api::success-story.success-story': ApiSuccessStorySuccessStory;
       'api::urban-zoning.urban-zoning': ApiUrbanZoningUrbanZoning;
+      'api::window-frames-and-glazing.window-frames-and-glazing': ApiWindowFramesAndGlazingWindowFramesAndGlazing;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

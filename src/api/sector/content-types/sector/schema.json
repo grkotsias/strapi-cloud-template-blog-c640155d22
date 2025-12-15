@@ -4,7 +4,7 @@
   "info": {
     "singularName": "sector",
     "pluralName": "sectors",
-    "displayName": "# Sectors"
+    "displayName": "S | Sectors"
   },
   "options": {
     "draftAndPublish": true
@@ -32,6 +32,14 @@
         }
       }
     },
+    "namePlural": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "slug": {
       "type": "uid",
       "pluginOptions": {
@@ -40,16 +48,8 @@
         }
       }
     },
-    "name_plural": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "slug_plural": {
-      "type": "string",
+    "slugPlural": {
+      "type": "uid",
       "pluginOptions": {
         "i18n": {
           "localized": true

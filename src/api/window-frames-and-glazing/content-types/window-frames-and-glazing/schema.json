@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "window_frames_and_glazings",
+  "info": {
+    "singularName": "window-frames-and-glazing",
+    "pluralName": "window-frames-and-glazings",
+    "displayName": "P | Window Frames & Glazing"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "code": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "slug": {
+      "type": "uid",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

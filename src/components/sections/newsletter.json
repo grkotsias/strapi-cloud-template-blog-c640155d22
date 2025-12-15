@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_sections_newsletters",
+  "info": {
+    "displayName": "Newsletter",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "cta": {
+      "type": "component",
+      "component": "components.call-to-action",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

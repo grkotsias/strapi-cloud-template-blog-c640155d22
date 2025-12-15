@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "insights_categories",
+  "info": {
+    "singularName": "insights-category",
+    "pluralName": "insights-categories",
+    "displayName": "Insights Categories"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "unique": true
+    },
+    "key": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "insights": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::insight.insight",
+      "mappedBy": "insightsCategory"
+    },
+    "seo": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "components.seo",
+      "repeatable": false
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "collectionName": "components_sections_text_with_variants",
+  "info": {
+    "displayName": "Text with Variants",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "variant": {
+      "type": "enumeration",
+      "required": true,
+      "default": "text",
+      "enum": [
+        "text",
+        "image",
+        "statistics"
+      ]
+    },
+    "switchSides": {
+      "type": "boolean",
+      "conditions": {
+        "visible": {
+          "!=": [
+            {
+              "var": "variant"
+            },
+            "text"
+          ]
+        }
+      },
+      "required": false,
+      "default": false
+    },
+    "eyebrow": {
+      "type": "string"
+    },
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "variant"
+            },
+            "image"
+          ]
+        }
+      },
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "statistics": {
+      "type": "component",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "variant"
+            },
+            "statistics"
+          ]
+        }
+      },
+      "component": "components.statistics-stats",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

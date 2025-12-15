@@ -4,7 +4,7 @@
   "info": {
     "singularName": "property",
     "pluralName": "properties",
-    "displayName": "00 Properties"
+    "displayName": "Properties"
   },
   "options": {
     "draftAndPublish": true
@@ -15,8 +15,8 @@
     }
   },
   "attributes": {
-    "name": {
-      "type": "string",
+    "code": {
+      "type": "integer",
       "pluginOptions": {
         "i18n": {
           "localized": false
@@ -24,22 +24,24 @@
       },
       "unique": true
     },
-    "property_category": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::property-category.property-category"
+    "name": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "unique": false
     },
-    "regional_unit": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::regional-unit.regional-unit"
+    "slug": {
+      "type": "uid",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
-    "municipality": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::municipality.municipality"
-    },
-    "location_level_view": {
+    "locationLevelView": {
       "type": "enumeration",
       "pluginOptions": {
         "i18n": {
@@ -53,31 +55,334 @@
         "show municipality"
       ]
     },
+    "purpose": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::purpose.purpose"
+    },
+    "propertyType": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::property-type.property-type"
+    },
+    "propertyCategory": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::property-category.property-category"
+    },
     "sectors": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::sector.sector",
       "mappedBy": "property"
     },
-    "meta_details": {
+    "region": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::region.region"
+    },
+    "regionalUnit": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::regional-unit.regional-unit"
+    },
+    "municipality": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::municipality.municipality"
+    },
+    "amenities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::p-amenity.p-amenity"
+    },
+    "securityFeatures": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::security-feature.security-feature"
+    },
+    "energyClass": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::energy-class.energy-class"
+    },
+    "energyDetails": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::energy-detail.energy-detail"
+    },
+    "fireProtections": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::fire-protection.fire-protection"
+    },
+    "floorCeiling": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::floor-ceiling.floor-ceiling"
+    },
+    "heatingCoolingDetails": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::heating-cooling.heating-cooling"
+    },
+    "urbanZoningDetails": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::urban-zoning.urban-zoning"
+    },
+    "squareMeters": {
+      "type": "decimal",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "plotSquareMeters": {
+      "type": "float",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "price": {
+      "type": "decimal",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "offerStatus": {
+      "type": "enumeration",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "enum": [
+        "booked",
+        "sold"
+      ]
+    },
+    "photos": {
+      "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "mapLat": {
+      "type": "float",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "mapLong": {
+      "type": "float",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "bedroomsCount": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "bathroomsCount": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "yearBuilt": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "yearRenovated": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "buildingLevels": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "parkingSpaces": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "loadingDocks": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "suites": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "power": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "fit": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "description": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "descriptionDetails": {
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "seo": {
       "type": "component",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "component": "meta.meta",
+      "component": "components.seo",
       "repeatable": false
     },
-    "security_features": {
-      "type": "component",
+    "facade": {
+      "type": "decimal",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "floorAreaRatio": {
+      "type": "decimal",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      },
-      "component": "property.security-features",
-      "repeatable": false
+      }
+    },
+    "buildingHeight": {
+      "type": "decimal",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "depth": {
+      "type": "decimal",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "landCoverage": {
+      "type": "decimal",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "withBuildingPermit": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "windowFramesAndGlazings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::window-frames-and-glazing.window-frames-and-glazing"
+    },
+    "locationHighlights": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::location-highlight.location-highlight"
+    },
+    "investmentHighlights": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::investment-highlight.investment-highlight"
+    },
+    "electricalInstallations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::electrical-installation.electrical-installation"
+    },
+    "outdoorAreas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::outdoor-area.outdoor-area"
+    },
+    "layoutOrientations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::layout-orientation.layout-orientation"
+    },
+    "certificationTypes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::certification-type.certification-type"
     }
   }
 }

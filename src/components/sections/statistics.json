@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_sections_statistics",
+  "info": {
+    "displayName": "Statistics"
+  },
+  "options": {},
+  "attributes": {
+    "statistics": {
+      "type": "component",
+      "component": "components.statistics-stats",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "success_stories_categories",
+  "info": {
+    "singularName": "success-stories-category",
+    "pluralName": "success-stories-categories",
+    "displayName": "Success Stories Categories"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "name",
+      "required": true,
+      "unique": true
+    },
+    "key": {
+      "type": "uid",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "targetField": "name",
+      "required": true
+    },
+    "successStories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::success-story.success-story",
+      "mappedBy": "successStoriesCategory"
+    },
+    "seo": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "components.seo",
+      "repeatable": false
+    }
+  }
+}

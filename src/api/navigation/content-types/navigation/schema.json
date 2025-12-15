@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "navigations",
+  "info": {
+    "singularName": "navigation",
+    "pluralName": "navigations",
+    "displayName": "Navigation"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "menuItems": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "nav.dropdowns",
+      "repeatable": true
+    }
+  }
+}

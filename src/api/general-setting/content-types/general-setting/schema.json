@@ -1,0 +1,43 @@
+{
+  "kind": "singleType",
+  "collectionName": "general_settings",
+  "info": {
+    "singularName": "general-setting",
+    "pluralName": "general-settings",
+    "displayName": "General Settings"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "linkedinUrl": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "facebookUrl": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "instagramUrl": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

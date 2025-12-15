@@ -4,7 +4,7 @@
   "info": {
     "singularName": "property-type",
     "pluralName": "property-types",
-    "displayName": "# Property Type"
+    "displayName": "P | Property Type"
   },
   "options": {
     "draftAndPublish": true
@@ -40,7 +40,7 @@
         }
       }
     },
-    "name_plural": {
+    "namePlural": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -48,7 +48,7 @@
         }
       }
     },
-    "slug_plural": {
+    "slugPlural": {
       "type": "uid",
       "pluginOptions": {
         "i18n": {

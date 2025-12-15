@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_sections_faqs",
+  "info": {
+    "displayName": "FAQ",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "items": {
+      "type": "component",
+      "component": "components.faq-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

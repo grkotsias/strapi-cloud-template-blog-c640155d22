@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_nav_menu_columns",
+  "info": {
+    "displayName": "Menu Columns",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "columns": {
+      "type": "component",
+      "component": "nav.menu-col",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

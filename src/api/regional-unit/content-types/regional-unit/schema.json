@@ -4,7 +4,7 @@
   "info": {
     "singularName": "regional-unit",
     "pluralName": "regional-units",
-    "displayName": "@ Regional Units"
+    "displayName": "S | Regional Units"
   },
   "options": {
     "draftAndPublish": true
@@ -52,13 +52,13 @@
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::region.region",
-      "inversedBy": "regional_units"
+      "inversedBy": "regionalUnits"
     },
     "municipalities": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::municipality.municipality",
-      "mappedBy": "regional_unit"
+      "mappedBy": "regionalUnit"
     }
   }
 }

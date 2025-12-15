@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_headers_header_contacts",
+  "info": {
+    "displayName": "Header Contact",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "contactInfo": {
+      "type": "blocks"
+    },
+    "socialsLabel": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

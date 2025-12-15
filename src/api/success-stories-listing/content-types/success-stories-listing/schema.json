@@ -1,0 +1,68 @@
+{
+  "kind": "singleType",
+  "collectionName": "success_stories_listings",
+  "info": {
+    "singularName": "success-stories-listing",
+    "pluralName": "success-stories-listings",
+    "displayName": "Success Stories Listing"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "description": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "components": [
+        "sections.wysiwyg",
+        "sections.values-columns",
+        "sections.text-with-variants",
+        "sections.text-columns-with-stats",
+        "sections.text-centered",
+        "sections.services-tiles",
+        "sections.properties-listing",
+        "sections.newsletter",
+        "sections.faq",
+        "sections.cta-tiles",
+        "sections.statistics",
+        "sections.insights-listing",
+        "sections.success-stories-listing"
+      ]
+    },
+    "seo": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "components.seo",
+      "repeatable": false
+    }
+  }
+}

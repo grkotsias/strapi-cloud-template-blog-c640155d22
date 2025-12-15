@@ -4,7 +4,7 @@
   "info": {
     "singularName": "property-category",
     "pluralName": "property-categories",
-    "displayName": "# Property Category"
+    "displayName": "S | Property Category"
   },
   "options": {
     "draftAndPublish": true
@@ -32,7 +32,7 @@
         }
       }
     },
-    "name_plural": {
+    "namePlural": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -48,7 +48,7 @@
         }
       }
     },
-    "slug_plural": {
+    "slugPlural": {
       "type": "uid",
       "pluginOptions": {
         "i18n": {

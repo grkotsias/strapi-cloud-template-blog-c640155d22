@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_components_values_items",
+  "info": {
+    "displayName": "Values Item",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

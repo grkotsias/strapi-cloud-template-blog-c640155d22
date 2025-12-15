@@ -1,0 +1,145 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "singularName": "page",
+    "pluralName": "pages",
+    "displayName": "Pages"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "unique": true
+    },
+    "pageTemplate": {
+      "type": "enumeration",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "default": "dynamic-page",
+      "enum": [
+        "dynamic-page",
+        "normal-page"
+      ]
+    },
+    "header": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "headers.header-page",
+      "repeatable": false
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "pageTemplate"
+            },
+            "dynamic-page"
+          ]
+        }
+      },
+      "components": [
+        "sections.values-columns",
+        "sections.text-columns-with-stats",
+        "sections.properties-listing",
+        "sections.newsletter",
+        "sections.faq",
+        "sections.text-with-variants",
+        "sections.text-centered",
+        "sections.cta-tiles",
+        "sections.services-tiles",
+        "sections.wysiwyg",
+        "sections.statistics",
+        "sections.insights-listing",
+        "sections.success-stories-listing"
+      ]
+    },
+    "content": {
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "pageTemplate"
+            },
+            "normal-page"
+          ]
+        }
+      }
+    },
+    "aside": {
+      "type": "dynamiczone",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "pageTemplate"
+            },
+            "normal-page"
+          ]
+        }
+      },
+      "components": [
+        "components.simple-link",
+        "widgets.links-widget"
+      ]
+    },
+    "seo": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "components.seo",
+      "repeatable": false
+    }
+  }
+}

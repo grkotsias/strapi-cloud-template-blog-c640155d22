@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_sections_text_centereds",
+  "info": {
+    "displayName": "Text Centered",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "quoteTitle": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "description": {
+      "type": "text"
+    },
+    "cta": {
+      "type": "component",
+      "component": "components.call-to-action",
+      "repeatable": false
+    },
+    "backgroundColor": {
+      "type": "enumeration",
+      "required": true,
+      "default": "light-grey",
+      "enum": [
+        "white",
+        "light-grey"
+      ]
+    }
+  },
+  "config": {}
+}

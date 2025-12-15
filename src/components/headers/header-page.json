@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_headers_header_pages",
+  "info": {
+    "displayName": "Header Page",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "variant": {
+      "type": "enumeration",
+      "required": true,
+      "default": "default",
+      "enum": [
+        "default",
+        "no-image"
+      ]
+    },
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "variant"
+            },
+            "default"
+          ]
+        }
+      },
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

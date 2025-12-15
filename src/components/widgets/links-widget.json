@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_widgets_links_widgets",
+  "info": {
+    "displayName": "Links",
+    "icon": "calendar"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "links": {
+      "type": "component",
+      "component": "components.simple-link",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

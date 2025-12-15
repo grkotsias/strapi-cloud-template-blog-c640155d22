@@ -4,7 +4,7 @@
   "info": {
     "singularName": "heating-cooling",
     "pluralName": "heating-coolings",
-    "displayName": "Heating Cooling"
+    "displayName": "P | Heating Cooling"
   },
   "options": {
     "draftAndPublish": true

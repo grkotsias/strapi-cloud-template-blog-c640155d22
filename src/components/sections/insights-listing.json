@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_sections_insights_listings",
+  "info": {
+    "displayName": "Insights Listing"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::insight.insight"
+    },
+    "cta": {
+      "type": "component",
+      "component": "components.call-to-action",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

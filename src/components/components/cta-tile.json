@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_components_cta_tiles",
+  "info": {
+    "displayName": "CTA Tile",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "title": {
+      "type": "text"
+    },
+    "link": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

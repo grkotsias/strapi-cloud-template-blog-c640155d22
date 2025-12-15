@@ -1,0 +1,62 @@
+{
+  "collectionName": "components_headers_home_headers",
+  "info": {
+    "displayName": "Home Header",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "variant": {
+      "type": "enumeration",
+      "required": true,
+      "default": "image/video",
+      "enum": [
+        "image/video",
+        "image-carousel"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "media": {
+      "type": "media",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "variant"
+            },
+            "image/video"
+          ]
+        }
+      },
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "slides": {
+      "type": "media",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "variant"
+            },
+            "image-carousel"
+          ]
+        }
+      },
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_sections_success_stories_listings",
+  "info": {
+    "displayName": "Success Stories Listing"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::success-story.success-story"
+    },
+    "cta": {
+      "type": "component",
+      "component": "components.call-to-action",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

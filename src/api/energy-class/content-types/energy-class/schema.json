@@ -4,7 +4,7 @@
   "info": {
     "singularName": "energy-class",
     "pluralName": "energy-classes",
-    "displayName": "Energy Class"
+    "displayName": "P | Energy Class"
   },
   "options": {
     "draftAndPublish": true

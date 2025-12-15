@@ -4,7 +4,7 @@
   "info": {
     "singularName": "municipality",
     "pluralName": "municipalities",
-    "displayName": "@ Municipalities"
+    "displayName": "S | Municipalities"
   },
   "options": {
     "draftAndPublish": true
@@ -48,7 +48,7 @@
         }
       }
     },
-    "regional_unit": {
+    "regionalUnit": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::regional-unit.regional-unit",

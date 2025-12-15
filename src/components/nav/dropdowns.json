@@ -1,0 +1,77 @@
+{
+  "collectionName": "components_nav_dropdowns",
+  "info": {
+    "displayName": "Dropdowns",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "dropdownItem": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "itemLabel": {
+      "type": "string",
+      "required": true
+    },
+    "itemUrl": {
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "dropdownItem"
+            },
+            false
+          ]
+        }
+      },
+      "required": true
+    },
+    "itemDescription": {
+      "type": "text",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "dropdownItem"
+            },
+            true
+          ]
+        }
+      }
+    },
+    "cta": {
+      "type": "component",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "dropdownItem"
+            },
+            true
+          ]
+        }
+      },
+      "component": "components.call-to-action",
+      "repeatable": false
+    },
+    "dropdownMenu": {
+      "type": "component",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "dropdownItem"
+            },
+            true
+          ]
+        }
+      },
+      "component": "nav.menu-columns",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

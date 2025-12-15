@@ -1,0 +1,109 @@
+{
+  "kind": "collectionType",
+  "collectionName": "insights",
+  "info": {
+    "singularName": "insight",
+    "pluralName": "insights",
+    "displayName": "Insights"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "url": {
+      "type": "uid",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "targetField": "title",
+      "required": true
+    },
+    "insightsCategory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::insights-category.insights-category",
+      "inversedBy": "insights"
+    },
+    "articlesTags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::articles-tag.articles-tag",
+      "mappedBy": "insights"
+    },
+    "description": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "publicationDate": {
+      "type": "date",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "thumbnail": {
+      "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "content": {
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "aside": {
+      "type": "dynamiczone",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "components": [
+        "components.simple-link",
+        "widgets.links-widget"
+      ]
+    },
+    "seo": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "components.seo",
+      "repeatable": false
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles_tags",
+  "info": {
+    "singularName": "articles-tag",
+    "pluralName": "articles-tags",
+    "displayName": "Articles Tags"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "unique": true
+    },
+    "key": {
+      "type": "uid",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "targetField": "name",
+      "required": true
+    },
+    "insights": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::insight.insight",
+      "inversedBy": "articlesTags"
+    },
+    "successStories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::success-story.success-story",
+      "inversedBy": "articlesTags"
+    }
+  }
+}

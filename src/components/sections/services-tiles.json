@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_sections_services_tiles",
+  "info": {
+    "displayName": "Services Tiles",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "services": {
+      "type": "component",
+      "component": "components.values-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

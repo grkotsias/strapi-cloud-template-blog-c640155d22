@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_components_call_to_actions",
+  "info": {
+    "displayName": "Call To Action",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "href": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "variant": {
+      "type": "enumeration",
+      "required": false,
+      "default": "outline-dark-lg",
+      "enum": [
+        "plain-link",
+        "grey-solid",
+        "light-grey-solid",
+        "outline-dark-sm",
+        "outline-dark-lg",
+        "outline-dark-submit"
+      ]
+    },
+    "openInNewTab": {
+      "type": "boolean"
+    }
+  },
+  "config": {}
+}

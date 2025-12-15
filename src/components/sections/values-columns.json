@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_sections_values_columns",
+  "info": {
+    "displayName": "Values Tiles",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "values": {
+      "type": "component",
+      "component": "components.values-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_sections_cta_tiles",
+  "info": {
+    "displayName": "CTA Tiles",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "tiles": {
+      "type": "component",
+      "component": "components.cta-tile",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

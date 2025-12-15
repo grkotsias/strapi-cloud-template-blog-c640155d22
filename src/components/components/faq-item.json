@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_components_faq_items",
+  "info": {
+    "displayName": "FAQ Item",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "string"
+    },
+    "answer": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

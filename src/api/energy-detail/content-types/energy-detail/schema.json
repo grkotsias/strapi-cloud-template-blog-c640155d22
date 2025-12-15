@@ -4,7 +4,7 @@
   "info": {
     "singularName": "energy-detail",
     "pluralName": "energy-details",
-    "displayName": "Energy Details"
+    "displayName": "P | Energy Details"
   },
   "options": {
     "draftAndPublish": true
