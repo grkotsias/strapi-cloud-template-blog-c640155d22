@@ -126,9 +126,9 @@
       "relation": "oneToMany",
       "target": "api::heating-cooling.heating-cooling"
     },
-    "urbanZoningDetails": {
+    "urban_zoning_detail": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "oneToOne",
       "target": "api::urban-zoning.urban-zoning"
     },
     "squareMeters": {
