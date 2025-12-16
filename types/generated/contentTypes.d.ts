@@ -1958,7 +1958,7 @@ export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::certification-type.certification-type'
     >;
-    code: Schema.Attribute.Integer &
+    code: Schema.Attribute.BigInteger &
       Schema.Attribute.Unique &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -2083,9 +2083,10 @@ export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
       'api::municipality.municipality'
     >;
     name: Schema.Attribute.String &
+      Schema.Attribute.Unique &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     offerStatus: Schema.Attribute.Enumeration<['booked', 'sold']> &
