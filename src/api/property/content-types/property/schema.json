@@ -99,8 +99,7 @@
     "securityFeatures": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::security-feature.security-feature",
-      "mappedBy": "property"
+      "target": "api::security-feature.security-feature"
     },
     "energyClass": {
       "type": "relation",
@@ -130,8 +129,7 @@
     "urbanZoningDetails": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::urban-zoning.urban-zoning",
-      "mappedBy": "property"
+      "target": "api::urban-zoning.urban-zoning"
     },
     "squareMeters": {
       "type": "decimal",

@@ -33,12 +33,6 @@
           "localized": true
         }
       }
-    },
-    "property": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::property.property",
-      "inversedBy": "urbanZoningDetails"
     }
   }
 }

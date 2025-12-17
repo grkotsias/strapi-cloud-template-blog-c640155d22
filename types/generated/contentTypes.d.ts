@@ -2484,7 +2484,6 @@ export interface ApiSecurityFeatureSecurityFeature
           localized: true;
         };
       }>;
-    property: Schema.Attribute.Relation<'manyToOne', 'api::property.property'>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID &
       Schema.Attribute.SetPluginOptions<{
@@ -2745,7 +2744,6 @@ export interface ApiUrbanZoningUrbanZoning extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    property: Schema.Attribute.Relation<'oneToOne', 'api::property.property'>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID &
       Schema.Attribute.SetPluginOptions<{
