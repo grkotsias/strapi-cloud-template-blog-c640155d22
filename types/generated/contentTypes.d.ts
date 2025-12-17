@@ -2176,7 +2176,7 @@ export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    urban_zoning_detail: Schema.Attribute.Relation<
+    urbanZoningDetail: Schema.Attribute.Relation<
       'oneToOne',
       'api::urban-zoning.urban-zoning'
     >;
