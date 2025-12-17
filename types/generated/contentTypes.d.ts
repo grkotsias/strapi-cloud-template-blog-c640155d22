@@ -2181,7 +2181,7 @@ export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
       'api::urban-zoning.urban-zoning'
     >;
     windowFramesAndGlazings: Schema.Attribute.Relation<
-      'oneToMany',
+      'oneToOne',
       'api::window-frames-and-glazing.window-frames-and-glazing'
     >;
     withBuildingPermit: Schema.Attribute.Boolean &

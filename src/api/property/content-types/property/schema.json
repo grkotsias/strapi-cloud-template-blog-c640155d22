@@ -352,7 +352,7 @@
     },
     "windowFramesAndGlazings": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "oneToOne",
       "target": "api::window-frames-and-glazing.window-frames-and-glazing"
     },
     "locationHighlights": {
