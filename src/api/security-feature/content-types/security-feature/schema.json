@@ -39,6 +39,12 @@
         }
       },
       "unique": true
+    },
+    "property": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::property.property",
+      "inversedBy": "securityFeatures"
     }
   }
 }
