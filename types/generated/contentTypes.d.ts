@@ -2020,8 +2020,8 @@ export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    floorCeiling: Schema.Attribute.Relation<
-      'oneToOne',
+    floorCeilings: Schema.Attribute.Relation<
+      'oneToMany',
       'api::floor-ceiling.floor-ceiling'
     >;
     heatingCoolingDetails: Schema.Attribute.Relation<
@@ -2190,13 +2190,13 @@ export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
-    yearBuilt: Schema.Attribute.Integer &
+    yearBuilt: Schema.Attribute.BigInteger &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
         };
       }>;
-    yearRenovated: Schema.Attribute.Integer &
+    yearRenovated: Schema.Attribute.BigInteger &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;

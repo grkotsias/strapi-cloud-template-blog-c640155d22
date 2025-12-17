@@ -116,9 +116,9 @@
       "relation": "oneToMany",
       "target": "api::fire-protection.fire-protection"
     },
-    "floorCeiling": {
+    "floorCeilings": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::floor-ceiling.floor-ceiling"
     },
     "heatingCoolingDetails": {
@@ -213,7 +213,7 @@
       }
     },
     "yearBuilt": {
-      "type": "integer",
+      "type": "biginteger",
       "pluginOptions": {
         "i18n": {
           "localized": false
@@ -221,7 +221,7 @@
       }
     },
     "yearRenovated": {
-      "type": "integer",
+      "type": "biginteger",
       "pluginOptions": {
         "i18n": {
           "localized": false
