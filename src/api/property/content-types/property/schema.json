@@ -126,7 +126,7 @@
       "relation": "oneToMany",
       "target": "api::heating-cooling.heating-cooling"
     },
-    "urbanZoningDetail": {
+    "urbanZoningDetails": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::urban-zoning.urban-zoning"
@@ -163,8 +163,9 @@
         }
       },
       "enum": [
-        "booked",
-        "sold"
+        "Normal",
+        "Sold",
+        "Rented"
       ]
     },
     "photos": {

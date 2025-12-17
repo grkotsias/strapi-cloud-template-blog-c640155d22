@@ -2089,7 +2089,7 @@ export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
-    offerStatus: Schema.Attribute.Enumeration<['booked', 'sold']> &
+    offerStatus: Schema.Attribute.Enumeration<['Normal', 'Sold', 'Rented']> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -2176,7 +2176,7 @@ export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    urbanZoningDetail: Schema.Attribute.Relation<
+    urbanZoningDetails: Schema.Attribute.Relation<
       'oneToOne',
       'api::urban-zoning.urban-zoning'
     >;
