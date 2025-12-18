@@ -155,18 +155,13 @@
         }
       }
     },
-    "offerStatus": {
-      "type": "enumeration",
+    "hidePrice": {
+      "type": "boolean",
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
-      },
-      "enum": [
-        "Normal",
-        "Sold",
-        "Rented"
-      ]
+      }
     },
     "photos": {
       "type": "media",
@@ -370,11 +365,6 @@
       "relation": "oneToMany",
       "target": "api::electrical-installation.electrical-installation"
     },
-    "outdoorAreas": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::outdoor-area.outdoor-area"
-    },
     "layoutOrientations": {
       "type": "relation",
       "relation": "oneToMany",
@@ -384,6 +374,32 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::certification-type.certification-type"
+    },
+    "outdoorAreas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::outdoor-area.outdoor-area"
+    },
+    "date": {
+      "type": "date",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "offerStatus": {
+      "type": "enumeration",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "enum": [
+        "Normal",
+        "Sold",
+        "Rented"
+      ]
     }
   }
 }
