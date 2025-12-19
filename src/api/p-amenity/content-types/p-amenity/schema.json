@@ -32,23 +32,7 @@
         }
       }
     },
-    "namePlural": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "slug": {
-      "type": "uid",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "slugPlural": {
       "type": "uid",
       "pluginOptions": {
         "i18n": {

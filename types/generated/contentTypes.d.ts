@@ -1658,20 +1658,8 @@ export interface ApiPAmenityPAmenity extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    namePlural: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    slugPlural: Schema.Attribute.UID &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
