@@ -384,7 +384,7 @@
       "type": "date",
       "pluginOptions": {
         "i18n": {
-          "localized": false
+          "localized": true
         }
       },
       "unique": false

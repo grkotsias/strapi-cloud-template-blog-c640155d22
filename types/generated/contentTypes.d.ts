@@ -1959,7 +1959,7 @@ export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
     date: Schema.Attribute.Date &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: false;
+          localized: true;
         };
       }>;
     depth: Schema.Attribute.Decimal &
