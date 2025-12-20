@@ -28,10 +28,10 @@
       "type": "string",
       "pluginOptions": {
         "i18n": {
-          "localized": false
+          "localized": true
         }
       },
-      "unique": true
+      "unique": false
     },
     "slug": {
       "type": "uid",
@@ -384,9 +384,10 @@
       "type": "date",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
-      }
+      },
+      "unique": false
     },
     "offerStatus": {
       "type": "enumeration",

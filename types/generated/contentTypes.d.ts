@@ -1959,7 +1959,7 @@ export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
     date: Schema.Attribute.Date &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     depth: Schema.Attribute.Decimal &
@@ -2083,10 +2083,9 @@ export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
       'api::municipality.municipality'
     >;
     name: Schema.Attribute.String &
-      Schema.Attribute.Unique &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: false;
+          localized: true;
         };
       }>;
     offerStatus: Schema.Attribute.Enumeration<['Normal', 'Sold', 'Rented']> &
