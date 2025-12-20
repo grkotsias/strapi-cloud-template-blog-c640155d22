@@ -2083,9 +2083,10 @@ export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
       'api::municipality.municipality'
     >;
     name: Schema.Attribute.String &
+      Schema.Attribute.Unique &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     offerStatus: Schema.Attribute.Enumeration<['Normal', 'Sold', 'Rented']> &
